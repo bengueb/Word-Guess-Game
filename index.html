@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Word Guess Game</title>
 </head>
+
 <body>
     <div id="title-nav">
-        <h1 id="titleName">Word Guess</h1>
-        <h2 id="themeName">Nasty Women Style</h2>
+        <h1 id="title-name">Word Guess</h1>
+        <h2 id="theme-name">Nasty Women Style</h2>
+    </div>
+    <div id="container">
+        <div id="game-section">
+            <p>To get started, press any key on your keyboard!</p>
+
+            <div>
+                <h2 id="section-title">Wins</h2>
+                <div id="wins"></div>
+            </div>
+
+            <div id="current-word-section">
+                <h2 id="section-title">Current Word</h2>
+                <div id="current-word"></div>
+            </div>
+
+            <div id="remaining-guesses-section">
+                <h2 id="section-title"> Number of Remaining Guesses</h2>
+                <div id="remaining-guesses"></div>
+            </div>
+
+            <div id="letters-guessed-section">
+                <h2 id="section-title">Letters Already Guessed</h2>
+                <div id="letters-guessed"></div>
+            </div>
+        </div>
     </div>
 
-    <div>
-        
-    </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>

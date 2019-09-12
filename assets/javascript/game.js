@@ -65,5 +65,31 @@ var wordGuess = {
         this.guessesLeft = this.totalGuesses;
 
         document.querySelector("#remaining-guesses").innerHTML = this.guessesLeft;
+    },
+
+    updateCorrectLetters: function(letter) {
+        for (var i = 0; i < this.lettersOfTheWord.length; i++){
+            if ((letter === this.lettersOfTheWord[i]) && (this.correctLetters.indexOf(letter) === -1)) {
+                this.correctLetters.push(letter);
+            }
+        }
+
+    },
+
+    rebuildWordView: function() {
+        var wordView = "";
+
+        for( var i=0; i<this.lettersOfTheWord.length; i++) {
+            if(this.correctLetters.indexOf(this.lettersOfTheWord[i]) !==-1) {
+                wordView += "&nbsp;_&nbsp;";
+            }
+        }
+
+        document.querySelector("#current-word").innerHTML = wordView;
+    },
+
+    restartGame: function() {
+        document.querySelector("#letters-guessed").innerHTML = "";
+        
     }
 };

@@ -33,6 +33,17 @@ var wordGuess = {
         this.processUpdateTotalGuesses();
     },
     
+    updateGuesses: function(letter){
+        if((this.guessedLetters.indexOf(letter)=== -1) && (this.lettersOfTheWord.indexOf(letter)=== -1)){
+
+            this.guessedLetters.push(letter);
+            this.guessesLeft--;
+
+            document.querySelector("#remaining-guesses").innerHTML = this.guessesLeft;
+            document.querySelector("#letters-guessed").innerHTML = this.guessedLetters.join(",")
+        }
+    },
+
     updatePage: function(letter){
         if(this.guessesLeft===0){
             this.restartGame();
@@ -49,5 +60,10 @@ var wordGuess = {
         }
     },
 
-    
+    processUpdateTotalGuesses: function(){
+        this.totalGuesses =  this.lettersOfTheWord.length + 5;
+        this.guessesLeft = this.totalGuesses;
+
+        document.querySelector("#remaining-guesses").innerHTML = this.guessesLeft;
+    }
 };

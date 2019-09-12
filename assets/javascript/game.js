@@ -10,7 +10,7 @@ var wordGuess = {
         gloriasteinem:{},
         malala:{},
         rosaparks:{},
-        bettywhite:{},
+        michelleobama:{},
     }
 
     currentWord: null,
@@ -31,5 +31,23 @@ var wordGuess = {
         this.rebuildWordView();
 
         this.processUpdateTotalGuesses();
-    };
+    },
+    
+    updatePage: function(letter){
+        if(this.guessesLeft===0){
+            this.restartGame();
+        }
+
+        else{
+            this.UpdateGuesses(letter);
+            this.updateCorrectLetters(letter);
+            this.rebuildWordView();
+
+            if (this.UpdateWins()===true){
+                this.restartGame();
+            }
+        }
+    },
+
+    
 };

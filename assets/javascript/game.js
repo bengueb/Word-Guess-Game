@@ -23,6 +23,13 @@ var wordGuess = {
     wins:0,
 
     setupGame: function(){
-        
-    }
+        var objKeys = Object.keys (this.wordChoices);
+        this.currentWord = objKeys[Math.floor(Math.Random() * objKeys.lenth)];
+
+        this.lettersOfTheWord = this.currentWord.split("");
+
+        this.rebuildWordView();
+
+        this.processUpdateTotalGuesses();
+    };
 };

@@ -1,4 +1,4 @@
-var wordGuess = {
+var wordGuessGame = {
 
     wordChoices: {
         beyonce:{},
